@@ -1,9 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 
-const connectToMongoose = require("./config/db"); // ✅ NO {}
+const connectToMongoose = require("./config/db");
 
 const app = express();
 
@@ -16,12 +15,10 @@ app.use("/api/admins", require("./routes/adminRoutes"));
 app.use("/api/account", require("./routes/accountRoutes"));
 app.use("/api/request", require("./routes/accountRequestRoutes"));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/dist")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "../Frontend/dist/index.html"))
-  );
-}
+// Health check
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is running successfully");
+});
 
 connectToMongoose().then(() => {
   app.listen(process.env.PORT || 5000, () => {
