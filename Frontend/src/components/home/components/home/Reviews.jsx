@@ -144,7 +144,7 @@ export default function Reviews() {
                 <div className="text-gray-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <a className="text-blue-600 hover:underline" href="#0">
-                    @FakeCO
+                    SS
                   </a>
                 </div>
               </div>
