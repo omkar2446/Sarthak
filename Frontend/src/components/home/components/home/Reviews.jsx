@@ -139,7 +139,7 @@ export default function Reviews() {
                   </span>{" "}
                 </blockquote>
                 <cite className="block font-bold text-lg not-italic mb-1">
-                  Robert Brown
+                  Sarthak Tanpure
                 </cite>
                 <div className="text-gray-600">
                   <span>CEO & Co-Founder</span>{" "}
